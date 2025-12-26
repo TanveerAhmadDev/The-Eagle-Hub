@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-ssm: 320px;
+  --breakpoint-mm: 375px;
+}
+
+:root {
+  --bg: #000000;
+  --fg: #fff;
+  --card-1: #b2b2b2;
+  --card-2: #ce2017;
+  --card-3: #2f2f2f;
+}
+
+body {
+  font-family: "Instrument Sans";
+  background-color: var(--bg);
+  overflow-x: hidden !important;
+}
+
+.fade-text {
+  color: var(--fg);
+}
+
+.char {
+  display: inline-block;
+}
+.card-container {
+  will-change: wdith;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 5/7;
+  transform-style: preserve-3d;
+  transform-origin: top;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  border-radius: 3.59281% / 2.58621%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-noise {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 128px;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  filter: blur(0.3px);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.slick-slide .WorkCard {
+  scale: 0.7;
+  opacity: 0.2;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+.slick-slide.slick-center .WorkCard {
+  scale: 0.99;
+  opacity: 1;
+}
+.slick-slide.slick-center + .slick-slide .WorkCard,
+.slick-slide.slick-center ~ .slick-slide.slick-active:first-of-type .WorkCard {
+  scale: 0.8;
+  opacity: 0.2;
+}
+
+.slick-slide .TestimonialCard {
+  transform: scale(0.8);
+  opacity: 0.4;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.slick-slide.slick-center .TestimonialCard {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.slick-slide:not(.slick-center) {
+  filter: blur(1px);
+}
+
+.TestimonialCard {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.slick-dots li.slick-active div {
+  background: white !important;
+}
+
+/* Mobile: show front and back together */
+@media (max-width: 767px) {
+  .card-front {
+    display: none;
+  }
+  .card-front,
+  .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+    backface-visibility: visible !important;
+  }
+
+  .card-back {
+    z-index: 1;
+  }
+}
+@media ((min-width: 768px) and (max-width: 1023px)) {
+  .WorkCard {
+    background: #000;
+  }
+  .slick-slide .WorkCard {
+    scale: 0.85;
+    opacity: 0.2;
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
+  }
+  .slick-slide.slick-center .WorkCard {
+    scale: 0.85;
+    opacity: 1;
+  }
+  .slick-slide.slick-center + .slick-slide .WorkCard,
+  .slick-slide.slick-center
+    ~ .slick-slide.slick-active:first-of-type
+    .WorkCard {
+    scale: 0.8;
+    opacity: 0.2;
+  }
+}
+.Con-Heading {
+  background: linear-gradient(
+    to bottom,
+    #aeaeae 0%,
+    #cececed9 35%,
+    rgba(145, 145, 145, 0.4) 65%,
+    transparent 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(0.15px);
+}
