@@ -7,8 +7,6 @@ import { GetInTouch } from "../../public/GetInTouch";
 import axios from "axios";
 
 const ContactPage = ({ lenis }) => {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -101,12 +99,15 @@ const ContactPage = ({ lenis }) => {
     setNotification("Sending your message...");
 
     try {
-      const result = await axios.post(`${backendUrl}/sendemail`, {
-        name,
-        email,
-        message,
-        website: "", // optional honeypot for spam
-      });
+      const result = await axios.post(
+        `https://the-eagle-hub-backend.vercel.app/sendemail`,
+        {
+          name,
+          email,
+          message,
+          website: "", // optional honeypot for spam
+        }
+      );
 
       console.log(result);
 
