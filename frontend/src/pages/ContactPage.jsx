@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
-import Textarea from "../components/textarea";
+import Textarea from "../components/Textarea";
 import { GetInTouch } from "../../public/GetInTouch";
 import axios from "axios";
 
