@@ -1,10 +1,16 @@
 import express from "express";
 import ContactUs from "./Emails/ContactUs.js";
 import { sendMail } from "./SendMail.js";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
+app.use(
+  cors({
+    origin: "https://the-eagle-hub.vercel.app",
+  })
+);
 
 function isValidEmail(email) {
   if (!email) return false;
