@@ -38,17 +38,10 @@ const App = () => {
   }, []);
 
   const handleLoadingComplete = () => {
-    setTimeout(() => {
-      setLoaded(true);
-      lenisRef.current?.start();
-      lenisRef.current?.scrollTo(0, { immediate: true });
-    }, 1000); // 2 seconds
+    setLoaded(true);
+    lenisRef.current?.start();
+    lenisRef.current?.scrollTo(0, { immediate: true });
   };
-  // const handleLoadingComplete = () => {
-  //   setLoaded(true);
-  //   lenisRef.current?.start();
-  //   lenisRef.current?.scrollTo(0, { immediate: true });
-  // };
 
   return (
     <>
