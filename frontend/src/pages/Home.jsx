@@ -316,9 +316,6 @@ const Home = ({ lenis }) => {
           end: "bottom ",
           pin: false,
           toggleActions: "play reverse play reverse",
-          markers: {
-            startColor: "orange",
-          },
         },
       });
 
@@ -373,7 +370,6 @@ const Home = ({ lenis }) => {
         trigger: section,
         start: "top-=25%",
         end: "bottom",
-        markers: true,
         onEnter: () => {
           gsap.fromTo(
             el,
@@ -427,7 +423,6 @@ const Home = ({ lenis }) => {
           pin: true,
           anticipatePin: 1,
           pinSpacing: true,
-          // markers: true,
           scrub: true,
         },
       });
