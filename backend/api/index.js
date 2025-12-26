@@ -17,7 +17,7 @@ app.use(
 );
 
 // Health check
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Server working");
 });
 
