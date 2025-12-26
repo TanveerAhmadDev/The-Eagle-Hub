@@ -6,6 +6,12 @@ const app = express();
 
 app.use(express.json());
 
+function isValidEmail(email) {
+  if (!email) return false;
+
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
+
 app.get("/", (req, res) => {
   res.json({ message: "Backend is working on Vercel!" });
 });
